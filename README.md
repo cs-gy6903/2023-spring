@@ -2,7 +2,7 @@
 
 ## Homework Assignments
 
-- [ps1](./ps1/) - warmpu
+- [ps1](./ps1/) - warmup
 - [ps2](./ps2/) - COMING SOON
 - [ps3](./ps3/) - COMING SOON
 - [ps4](./ps4/) - COMING SOON
@@ -11,7 +11,7 @@
 
 ## Optional Assignments
 
-- [project](./project/) - COMING SOON
+- [project](./project/) - Basic TLS client
 
 ## Resources
 
