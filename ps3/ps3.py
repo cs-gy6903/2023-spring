@@ -34,13 +34,15 @@ def problem3(digest_state: bytes, msg_len: int, data: bytes) -> bool:
     Paremeters:
     |digest_state|  the internal state component representing the current hash value
     |msg_len|       the internal state component representing the length of the message
-                    processed so far
+                    processed so far in bytes (not counting internal padding!)
     |data|          the message to test against the provided internal state
 
     >>> problem3(bytes.fromhex("00")*20, 3, b"foo")
     False
     >>> problem3(bytes.fromhex("acbd18db4cc2f85cedef654fccc4a4d8"), 3, b"foo")
     True
+    >>> problem3(bytes.fromhex("acbd18db4cc2f85cedef654fccc4a4d8"), 5, b"foo")
+    False
     """
 
 
@@ -52,13 +54,15 @@ def problem4(digest_state: bytes, msg_len: int, data: bytes) -> bool:
     Paremeters:
     |digest_state|  the internal state component representing the current hash value
     |msg_len|       the internal state component representing the length of the message
-                    processed so far
+                    processed so far in bytes (not counting internal padding!)
     |data|          the message to test against the provided internal state
 
     >>> problem4(bytes.fromhex("00")*32, 3, b"foo")
     False
     >>> problem4(bytes.fromhex("2c26b46b68ffc68ff99b453c1d30413413422d706483bfa0f98a5e886266e7ae"), 3, b"foo")
     True
+    >>> problem3(bytes.fromhex("2c26b46b68ffc68ff99b453c1d30413413422d706483bfa0f98a5e886266e7ae"), 5, b"foo")
+    False
     """
 
 
