@@ -5,7 +5,10 @@ For this assignment we will be using EC curve: y**2 = x**3 + ax + b (mod p)
 
 https://en.wikipedia.org/wiki/Elliptic_curve_point_multiplication
 """
+import sys
 import typing
+
+import simple_bson
 
 
 class P(typing.TypedDict):
@@ -35,6 +38,7 @@ def multiplicative_inverse(i: int, p: int) -> int:
     >>> multiplicative_inverse(5, 17)
     7
     """
+    return 0  # TODO: this is a placeholder, add your solution here
 
 
 def point_negate(a: int, b: int, p: int, x: int, y: int) -> P:
@@ -51,6 +55,7 @@ def point_negate(a: int, b: int, p: int, x: int, y: int) -> P:
     >>> point_negate(a=2, b=3, p=17, x=5, y=11)
     {'x': 5, 'y': 6}
     """
+    return P(x=0, y=0)  # TODO: this is a placeholder, add your solution here
 
 
 def point_add(a: int, b: int, p: int, x1: int, y1: int, x2: int, y2: int) -> P:
@@ -78,6 +83,7 @@ def point_add(a: int, b: int, p: int, x1: int, y1: int, x2: int, y2: int) -> P:
     >>> point_add(a=2, b=3, p=17, x2=15, y2=5, x1=5, y1=11)
     {'x': 13, 'y': 4}
     """
+    return P(x=0, y=0)  # TODO: this is a placeholder, add your solution here
 
 
 def point_double(a: int, b: int, p: int, x: int, y: int) -> P:
@@ -95,6 +101,7 @@ def point_double(a: int, b: int, p: int, x: int, y: int) -> P:
     >>> point_double(a=2, b=3, p=17, x=5, y=11)
     {'x': 15, 'y': 5}
     """
+    return P(x=0, y=0)  # TODO: this is a placeholder, add your solution here
 
 
 def point_multiply(a: int, b: int, p: int, x: int, y: int, n: int) -> P:
@@ -134,6 +141,7 @@ def point_multiply(a: int, b: int, p: int, x: int, y: int, n: int) -> P:
     >>> point_multiply(a=2, b=3, p=17, x=5, y=11, n=5)
     {'x': 2, 'y': 10}
     """
+    return P(x=0, y=0)  # TODO: this is a placeholder, add your solution here
 
 
 def ecdh_agreement(
@@ -176,3 +184,10 @@ def ecdh_agreement(
     >>> ecdh_agreement(a=163, b=141, p=179, x_A=103, y_A=6, d_A=76, x_B=90, y_B=148, d_B=42)
     33
     """
+    return 0  # TODO: this is a placeholder, add your solution here
+
+
+if __name__ == "__main__":
+    inputs = simple_bson.loads(sys.stdin.buffer.read())
+    solutions = {k: globals()[k](**v) for k, v in inputs.items()}
+    sys.stdout.buffer.write(simple_bson.dumps(solutions))
