@@ -8,6 +8,13 @@ know are described pretty well on wikipedia's
 
 See GradeScope for exact due-date of this assignment.
 
+**NOTE**: For local testing in this pset, you'll need to install the
+[`simple_bson` module][3]. You can do that with the following command:
+
+```
+$ pip3 install simple_bson
+```
+
 ## Cheating
 
 All the code you submit must be written by you. Submitting code written
@@ -60,3 +67,4 @@ See [./ps4.py](./ps4.py) for all the function stubs.
 
 [1]: https://en.wikipedia.org/wiki/Elliptic_curve_point_multiplication
 [2]: https://en.wikipedia.org/wiki/Elliptic-curve_Diffie%E2%80%93Hellman#Key_establishment_protocol
+[3]: https://pypi.org/project/simple-bson/
