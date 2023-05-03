@@ -5,8 +5,7 @@
 - [ps1](./ps1/) - Warmup
 - [ps2](./ps2/) - Diffie-Hellman
 - [ps3](./ps3/) - Hashing
-- [ps4](./ps4/) - COMING SOON
-- [ps5](./ps5/) - COMING SOON
+- [ps4](./ps4/) - Elliptic Curves
 
 
 ## Optional Assignments
