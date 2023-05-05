@@ -8,12 +8,6 @@ know are described pretty well on wikipedia's
 
 See GradeScope for exact due-date of this assignment.
 
-**NOTE**: For local testing in this pset, you'll need to install the
-[`simple_bson` module][3]. You can do that with the following command:
-
-```
-$ pip3 install simple_bson
-```
 
 ## Cheating
 

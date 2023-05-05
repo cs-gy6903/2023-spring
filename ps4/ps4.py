@@ -1,25 +1,9 @@
-#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
 For this assignment we will be using EC curve: y**2 = x**3 + ax + b (mod p)
 
 https://en.wikipedia.org/wiki/Elliptic_curve_point_multiplication
 """
-import sys
-import typing
-
-import simple_bson
-
-
-class P(typing.TypedDict):
-    """
-    Point on the EC
-
-    We just care about x and y coordinates
-    """
-
-    x: int
-    y: int
 
 
 def multiplicative_inverse(i: int, p: int) -> int:
@@ -41,7 +25,7 @@ def multiplicative_inverse(i: int, p: int) -> int:
     return 0  # TODO: this is a placeholder, add your solution here
 
 
-def point_negate(a: int, b: int, p: int, x: int, y: int) -> P:
+def point_negate(a: int, b: int, p: int, x: int, y: int) -> tuple:
     """
     Negate a point (x, y) on curve (a, b, p)
 
@@ -53,12 +37,12 @@ def point_negate(a: int, b: int, p: int, x: int, y: int) -> P:
     (x, -y) == -(x, y)
 
     >>> point_negate(a=2, b=3, p=17, x=5, y=11)
-    {'x': 5, 'y': 6}
+    (5, 6)
     """
-    return P(x=0, y=0)  # TODO: this is a placeholder, add your solution here
+    return 0, 0  # TODO: this is a placeholder, add your solution here
 
 
-def point_add(a: int, b: int, p: int, x1: int, y1: int, x2: int, y2: int) -> P:
+def point_add(a: int, b: int, p: int, x1: int, y1: int, x2: int, y2: int) -> tuple:
     """
     Add point (x1, y1) to point (x2, y2) on curve (a, b, p)
 
@@ -79,14 +63,14 @@ def point_add(a: int, b: int, p: int, x1: int, y1: int, x2: int, y2: int) -> P:
     y = slope(x1 - x) - y1
 
     >>> point_add(a=2, b=3, p=17, x1=15, y1=5, x2=5, y2=11)
-    {'x': 13, 'y': 4}
+    (13, 4)
     >>> point_add(a=2, b=3, p=17, x2=15, y2=5, x1=5, y1=11)
-    {'x': 13, 'y': 4}
+    (13, 4)
     """
-    return P(x=0, y=0)  # TODO: this is a placeholder, add your solution here
+    return 0, 0  # TODO: this is a placeholder, add your solution here
 
 
-def point_double(a: int, b: int, p: int, x: int, y: int) -> P:
+def point_double(a: int, b: int, p: int, x: int, y: int) -> tuple:
     """
     Double (add to itself) a point (x, y) on curve (a, b, p)
 
@@ -99,12 +83,12 @@ def point_double(a: int, b: int, p: int, x: int, y: int) -> P:
             2 * y1
 
     >>> point_double(a=2, b=3, p=17, x=5, y=11)
-    {'x': 15, 'y': 5}
+    (15, 5)
     """
-    return P(x=0, y=0)  # TODO: this is a placeholder, add your solution here
+    return 0, 0  # TODO: this is a placeholder, add your solution here
 
 
-def point_multiply(a: int, b: int, p: int, x: int, y: int, n: int) -> P:
+def point_multiply(a: int, b: int, p: int, x: int, y: int, n: int) -> tuple:
     """
     Multiply point (x, y) by n on curve (a, b, p)
 
@@ -119,9 +103,10 @@ def point_multiply(a: int, b: int, p: int, x: int, y: int, n: int) -> P:
     we can implement point multiplication where multiplying by:
 
     * 1 == point itself
-    * -1 == point negation
     * 2 == point double
     * x == point added x times. double and add method make this easy
+    * -1 == point negation
+    * -x == x * -1 (negate point and then multiply by positive multiplier)
 
     Instead of adding same point many-many times, double and add method should be used
     to make that operation much simpler. For example:
@@ -129,19 +114,19 @@ def point_multiply(a: int, b: int, p: int, x: int, y: int, n: int) -> P:
     p * 5 == p + p + p + p + p == (p * 2) + (p * 2) + p == (p * 2) * 2 + p
 
     >>> point_multiply(a=2, b=3, p=17, x=5, y=11, n=-1)
-    {'x': 5, 'y': 6}
+    (5, 6)
     >>> point_multiply(a=2, b=3, p=17, x=5, y=11, n=1)
-    {'x': 5, 'y': 11}
+    (5, 11)
     >>> point_multiply(a=2, b=3, p=17, x=5, y=11, n=2)
-    {'x': 15, 'y': 5}
+    (15, 5)
     >>> point_multiply(a=2, b=3, p=17, x=5, y=11, n=3)
-    {'x': 13, 'y': 4}
+    (13, 4)
     >>> point_multiply(a=2, b=3, p=17, x=5, y=11, n=4)
-    {'x': 8, 'y': 15}
+    (8, 15)
     >>> point_multiply(a=2, b=3, p=17, x=5, y=11, n=5)
-    {'x': 2, 'y': 10}
+    (2, 10)
     """
-    return P(x=0, y=0)  # TODO: this is a placeholder, add your solution here
+    return 0, 0  # TODO: this is a placeholder, add your solution here
 
 
 def ecdh_agreement(
@@ -185,9 +170,3 @@ def ecdh_agreement(
     33
     """
     return 0  # TODO: this is a placeholder, add your solution here
-
-
-if __name__ == "__main__":
-    inputs = simple_bson.loads(sys.stdin.buffer.read())
-    solutions = {k: globals()[k](**v) for k, v in inputs.items()}
-    sys.stdout.buffer.write(simple_bson.dumps(solutions))
