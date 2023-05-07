@@ -125,6 +125,8 @@ def point_multiply(a: int, b: int, p: int, x: int, y: int, n: int) -> tuple:
     (8, 15)
     >>> point_multiply(a=2, b=3, p=17, x=5, y=11, n=5)
     (2, 10)
+    >>> point_multiply(a=106, b=18, p=107, x=52, y=61, n=-37)
+    (82, 19)
     """
     return 0, 0  # TODO: this is a placeholder, add your solution here
 
@@ -168,5 +170,7 @@ def ecdh_agreement(
     53
     >>> ecdh_agreement(a=163, b=141, p=179, x_A=103, y_A=6, d_A=76, x_B=90, y_B=148, d_B=42)
     33
+    >>> ecdh_agreement(a=70, b=4, p=179, x_A=150, y_A=16, d_A=65, x_B=138, y_B=23, d_B=140)
+    138
     """
     return 0  # TODO: this is a placeholder, add your solution here
