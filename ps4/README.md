@@ -1,10 +1,11 @@
 # Problem Set 4
 
-This assignment will cover the basics of EC point arithmetic, then
-put those primitives together to see how they can be used to implement
-Elliptic Curve Diffie-Hellman (ECDH). All the math bits you need to
-know are described pretty well on wikipedia's
-[EC point multiplication][1] and [ECDH][2] pages.
+This assignment will cover the basics of EC point arithmetic, then put those
+primitives together to see how they can be used to implement Elliptic Curve
+Diffie-Hellman (ECDH). All the math bits you need to know are described pretty
+well on wikipedia's [EC point multiplication][1] and [ECDH][2] pages. There's
+also a really nice writeup on the concepts [here][4] and an accompanying visual
+calculator [here][5].
 
 See GradeScope for exact due-date of this assignment.
 
@@ -62,3 +63,5 @@ See [./ps4.py](./ps4.py) for all the function stubs.
 [1]: https://en.wikipedia.org/wiki/Elliptic_curve_point_multiplication
 [2]: https://en.wikipedia.org/wiki/Elliptic-curve_Diffie%E2%80%93Hellman#Key_establishment_protocol
 [3]: https://pypi.org/project/simple-bson/
+[4]: https://andrea.corbellini.name/2015/05/17/elliptic-curve-cryptography-a-gentle-introduction/
+[5]: https://andrea.corbellini.name/ecc/interactive/modk-add.html
