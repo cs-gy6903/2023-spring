@@ -718,10 +718,10 @@ While it would be important to check for the zero-value in real-world
 implementations, we won't require that here.
 
 We then use the shared secret (referred to as `K` above) and HKDF (as described
-[in RFC 5869][19] and [on wikipedia][20]) to compute the Handshake Secret (used
-to derive symmetric keys for encrypted portions of the handshake) and the
-Master Secret (used to derive symmetric keys for application traffic) via the
-[following scheme][18]:
+[in RFC 5869][19], [on wikipedia][20], and (most precisely) in [NIST SP
+800-56C][41]) to compute the Handshake Secret (used to derive symmetric keys
+for encrypted portions of the handshake) and the Master Secret (used to derive
+symmetric keys for application traffic) via the [following scheme][18]:
 
 <details>
 <summary>Key Schedule</summary>
@@ -1586,5 +1586,6 @@ options:
 [38]: https://www.rfc-editor.org/rfc/rfc8446#section-4.2.3
 [39]: https://www.rfc-editor.org/rfc/rfc8446#section-4.3.1
 [40]: https://www.rfc-editor.org/rfc/rfc8446#section-4.6.1
+[41]: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-56Cr2.pdf
 [nginx]: https://nginx.org/en/
 [docker-compose]: https://docs.docker.com/compose/

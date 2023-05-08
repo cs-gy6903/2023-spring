@@ -173,6 +173,8 @@ def scaffolding_variable_vector_uint16(
 
     >>> pretty_hex(scaffolding_variable_vector_uint16(2, [1, 2, 3]))
     00 06 00 01 00 02 00 03
+    >>> pretty_hex(scaffolding_variable_vector_uint16(3, [1, 2, 3]))
+    00 00 06 00 01 00 02 00 03
     """
 
 
@@ -218,7 +220,7 @@ def scaffolding_generate_client_hello(hostname: bytes) -> bytes:
     # * client random
     # * session id
     # * keyshare
-    >> pretty_hex(scaffolding_client_hello(b'nyu.edu'))
+    >> pretty_hex(scaffolding_generate_client_hello(b'nyu.edu'))
     000: 16 03 01 00 94 01 00 00 90 03 03 8c 8d 89 00 a0
     016: 08 2a c7 81 38 cb bf 5e 22 40 1a b4 cd 2e d6 8e
     032: ac 0c dc 47 6d 10 bc 86 18 73 ef 14 af 83 f6 37
