@@ -131,6 +131,7 @@ some TLS extensions:
 - [A Detailed Look at RFC 8446 (a.k.a. TLS 1.3)][3]
 - [online ASN.1 encoder/decoder][6]
 - [full handshake test vectors][37]
+- [annotated demo of web page sending itself over TLS byte-by-byte][42]
 
 Diagrams illustrating the format of client Hello message, Supported Versions
 Extension, and Key Share Extension:
@@ -1587,5 +1588,6 @@ options:
 [39]: https://www.rfc-editor.org/rfc/rfc8446#section-4.3.1
 [40]: https://www.rfc-editor.org/rfc/rfc8446#section-4.6.1
 [41]: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-56Cr2.pdf
+[42]: https://subtls.pages.dev/
 [nginx]: https://nginx.org/en/
 [docker-compose]: https://docs.docker.com/compose/
